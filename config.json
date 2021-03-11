@@ -1,0 +1,7 @@
+{
+     "proxies": {
+          "http": "http://127.0.0.1:1087",
+          "https": "http://127.0.0.1:1087"
+     },
+     "picgo_upload": "http://127.0.0.1:36677/upload"
+}

@@ -1,0 +1,10 @@
+*.png
+*jpg
+*.pickle
+old_json.json
+new_json_file.json
+reimport.json
+Pipfile.lock
+.DS_Store
+.idea/
+__pycache__/
