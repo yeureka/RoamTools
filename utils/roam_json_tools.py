@@ -53,12 +53,12 @@ def save_json_file(file_path, json_content):
 
 
 def pickle_lst(path, lst):
-    with open(path, "wb", encoding="utf-8") as f:
+    with open(path, "wb") as f:
         pickle.dump(lst, f)
 
 
 def load_pickle_lst(path):
-    with open(path, "rb", encoding="utf-8") as f:
+    with open(path, "rb") as f:
         markdown_img_lst = pickle.load(f)
         return markdown_img_lst
 
@@ -70,7 +70,7 @@ def get_config():
 
 def save_img(img_name, img_content):
     path = os.getcwd() + '/img/' + img_name
-    with open(path, 'wb', encoding="utf-8") as f:
+    with open(path, 'wb') as f:
         f.write(img_content)
     return path
 
