@@ -39,17 +39,15 @@ while True:
         #                  args=(window,), daemon=True).start()
         path = values["json_file_path"]
         if path:
+            old_json_path = os.path.join(current_path, "old_json.json")
+            print(old_json_path)
             if sys_str == "Windows":
-                os.system(
-                    "copy " + path + os.path.join(current_path, "old_json.json")
-                )
+                os.system("copy " + path + old_json_path)
             else:
-                os.system(
-                    "cp " + path + os.path.join(current_path, "old_json.json")
-                )
+                os.system("cp " + path + old_json_path)
             threading.Thread(
                 target=roam_tool.run,
-                args=("old_json.json", window),
+                args=(old_json_path, window),
                 daemon=True
             ).start()
         else:
