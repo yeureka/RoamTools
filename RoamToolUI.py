@@ -26,7 +26,7 @@ layout = [[sg.Text('选择你要转换的json文件，点击 运行 按钮\n'
           [sg.Submit(button_text="运行", key="run"),
            sg.Input(visible=False, enable_events=True, key="download"),
            sg.SaveAs(button_text="下载", disabled=True, key="new_json_file_path",
-                     default_extension="json", file_types=('JSON', '.json'))],
+                     default_extension="json", file_types=('JSON', '*.json'))],
           [sg.MLine(key='-ML1-'+sg.WRITE_ONLY_KEY, size=(70, 20))]]
 window = sg.Window('RoamTool', layout, finalize=True,
                    font=("San Francisco", 16))
