@@ -3,9 +3,9 @@
 ### 功能说明
 下载RoamResearch的图片并利用Picgo上传到新图床备份，同时用新图床链接替换原有图片链接，生成新的json文件可重新导入RoamResearch中。
 ### 依赖
-1. requests
-2. pysimplegui
-3. picgo
+1. [requests](https://pypi.org/project/requests/)
+2. [pysimplegui](https://pysimplegui.readthedocs.io/en/latest/)
+3. [Picgo](https://molunerfinn.com/PicGo/)
 ### 使用方法
 #### 下载安装
 ```
@@ -33,12 +33,15 @@ python RoamToolUI.py
 }
 ```
 另外，上传图床利用了Picgo的服务，picgo设置请参考以下官方教程。
-> [picgo-server的使用](https://picgo.github.io/PicGo-Doc/zh/guide/advance.html#picgo-server%E7%9A%84%E4%BD%BF%E7%94%A8)
+> 1. [picgo-server的使用](https://picgo.github.io/PicGo-Doc/zh/guide/advance.html#picgo-server%E7%9A%84%E4%BD%BF%E7%94%A8)
+> 2. [Picgo主页](https://molunerfinn.com/PicGo/)
+
 #### 使用方法
 1. 点击`浏览`选择刚从RoamResearch下载的json文件。
 2. 点击`运行`。
 3. 运行结束后点击`下载`按钮保存转换好的json文件。
 4. 将转换好的json文件重新导入回RoamResearch中即可。
+5. 安装文件夹下的img文件夹中保存有所有的图片，可按需取用。
 #### 鸣谢
 感谢ryantuck提供的工具 [fix-roam](https://github.com/ryantuck/fix-roam) 解决了Roam的json文件再次导入时遇到的问题。
 
