@@ -19,10 +19,8 @@ python RoamToolUI.py
 ```
 #### 使用前准备
 首先需要将RoamResearch文章导出为json格式文件。  
-然后打开本工具。  
-
-![](https://youpai.yeureka.cn/picgo/Screen Shot 2021-03-13 at 12.28.48 AM.png)
-
+然后打开本工具。
+![](https://youpai.yeureka.cn/picgo/RoamTool界面.png)
 由于RoamResearch原生图片存放在google，众所周知的原因下载这些图片需要使用代理。点击`设置`按钮可设置代理服务ip。
 ```
 # config.json
