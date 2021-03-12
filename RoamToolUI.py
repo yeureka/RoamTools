@@ -43,6 +43,7 @@ while True:
             print("保存文件", old_json_path)
             if sys_str == "Windows":
                 path.replace("/", "\\")
+                print("copy " + path + " " + current_path)
                 os.system("copy " + path + " " + current_path)
             else:
                 os.system("cp " + path + " " + old_json_path)
