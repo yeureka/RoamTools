@@ -69,7 +69,14 @@ def get_config():
 
 
 def save_img(img_name, img_content):
-    path = os.getcwd() + '/img/' + img_name
+    path = os.path.join(
+        os.path.abspath(
+            os.path.join(os.path.abspath(os.path.dirname(__file__)), "..")
+        ),
+        "img",
+        img_name
+    )
+    print(path)
     with open(path, 'wb') as f:
         f.write(img_content)
     return path
