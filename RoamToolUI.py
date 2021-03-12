@@ -40,11 +40,12 @@ while True:
         path = values["json_file_path"]
         if path:
             old_json_path = os.path.join(current_path, "old_json.json")
-            print(old_json_path)
+            print("保存文件", old_json_path)
             if sys_str == "Windows":
                 os.system("copy " + path + " " + old_json_path)
             else:
                 os.system("cp " + path + " " + old_json_path)
+            print("保存成功")
             threading.Thread(
                 target=roam_tool.run,
                 args=(old_json_path, window),
