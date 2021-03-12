@@ -42,7 +42,7 @@ while True:
             old_json_path = os.path.join(current_path, "old_json.json")
             print("保存文件", old_json_path)
             if sys_str == "Windows":
-                path.replace("/", "\\")
+                path = path.replace("/", "\\")
                 print("copy " + path + " " + current_path)
                 os.system("copy " + path + " " + current_path)
             else:
