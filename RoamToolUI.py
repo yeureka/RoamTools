@@ -15,7 +15,7 @@ def my_print(*args, **kwargs):
 sys_str = platform.system()
 sg.theme('Light Blue 3')
 
-layout = [[sg.Text('选择你要转换的json文件，点击 运行 按钮，'
+layout = [[sg.Text('选择你要转换的json文件，点击 运行 按钮\n'
                    '待程序运行结束后点击 下载 下载转换好的json文件\n'
                    'RoamResearch图片原生存放在google服务器中，请确保能访问google\n'
                    '点击 设置 设置代理服务器和 Picgo 服务')],
@@ -31,6 +31,7 @@ layout = [[sg.Text('选择你要转换的json文件，点击 运行 按钮，'
 window = sg.Window('RoamTool', layout, finalize=True,
                    font=("San Francisco", 16))
 roam_tool = RoamTool(my_print)
+current_path = os.path.abspath(os.path.dirname(__file__))
 while True:
     event, values = window.read()
     if event == "run":
@@ -39,9 +40,13 @@ while True:
         path = values["json_file_path"]
         if path:
             if sys_str == "Windows":
-                os.system("copy " + path + " old_json.json")
+                os.system(
+                    "copy " + path + os.path.join(current_path, "old_json.json")
+                )
             else:
-                os.system("cp " + path + " old_json.json")
+                os.system(
+                    "cp " + path + os.path.join(current_path, "old_json.json")
+                )
             threading.Thread(
                 target=roam_tool.run,
                 args=("old_json.json", window),
