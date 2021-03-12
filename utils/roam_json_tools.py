@@ -37,28 +37,28 @@ class MarkdownImg:
 
 
 def load_json_file(file_path):
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         page_lst = json.load(f)
     return page_lst
 
 
 def open_json_file(file_path):
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
 
 
 def save_json_file(file_path, json_content):
-    with open(file_path, "w") as f:
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(json_content)
 
 
 def pickle_lst(path, lst):
-    with open(path, "wb") as f:
+    with open(path, "wb", encoding="utf-8") as f:
         pickle.dump(lst, f)
 
 
 def load_pickle_lst(path):
-    with open(path, "rb") as f:
+    with open(path, "rb", encoding="utf-8") as f:
         markdown_img_lst = pickle.load(f)
         return markdown_img_lst
 
@@ -70,7 +70,7 @@ def get_config():
 
 def save_img(img_name, img_content):
     path = os.getcwd() + '/img/' + img_name
-    with open(path, 'wb') as f:
+    with open(path, 'wb', encoding="utf-8") as f:
         f.write(img_content)
     return path
 
@@ -191,7 +191,7 @@ class RoamTool:
 
     def open_json_file(self, file_path):
         self.my_print("进入打开文件:", file_path)
-        with open(file_path, "r") as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             self.my_print("文件打开:", file_path)
             return f.read()
 
