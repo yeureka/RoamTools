@@ -17,7 +17,7 @@ def retry(func):
             try:
                 return func(*args, **kwargs)
             except Exception as e:
-                print("retrying %s", func.__qualname__)
+                print("retrying {}:".format(func.__qualname__), e)
                 last_raised = e
         raise last_raised
 
@@ -104,8 +104,12 @@ def upload_img(path, picgo_upload):
     data = {
         "list": [path]
     }
+    print(data)
+    print(json.dumps(data))
     resp = requests.post(picgo_upload, data=json.dumps(data), timeout=30)
+    print(resp.text)
     resp_info = json.loads(resp.text)
+    print("上传返回值：", resp_info)
     return resp_info["success"], resp_info["result"][0]
 
 
@@ -255,7 +259,7 @@ class RoamTool:
         self.my_print("修复完毕")
 
     def save_as_json(self, path):
-        save_json_file(path, self.roam_json)
+        save_json_file(path, self.reimport_json_file)
         self.my_print("文件成功保存到: {}".format(path))
 
     def run(self, path, window):
